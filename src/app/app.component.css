@@ -1,0 +1,15 @@
+.aguarde{
+    text-align: center;
+    padding-top: 50px;
+    border-radius: 2px;
+    z-index: 9999;
+    opacity: 1;
+    background-color:#333;
+    color: white;
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+}

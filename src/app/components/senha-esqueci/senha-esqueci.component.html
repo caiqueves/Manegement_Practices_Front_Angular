@@ -1,0 +1,27 @@
+<div class="register-box">
+  <div class="register-logo">
+    <b>PUSH</b> | NOTIFICATION
+    <p>
+      <img src="../../../../assets/push-notifications.gif" height="200" width="250">
+    </p>
+  </div>
+  <div class="col-xs-12  register-box-body">
+    <p class="register-box-msg">Por favor, informe o email para continuar</p>
+    
+    <form [formGroup]="EsqueciSenhaForm">
+      <app-input [showTip]="false" >
+      <input type="email" formControlName="email" class="form-control " placeholder="Email">
+      <span class="glyphicon glyphicon-user form-control-feedback"></span>
+      </app-input>
+      
+      <div class="row">
+        <div class="col-xs-offset-8 col-xs-4">
+          <button (click)="recuperarSenha()" [disabled]="EsqueciSenhaForm.invalid" class="btn btn-primary btn-block btn-flat">
+            Recuperar</button>
+        </div>
+      </div>
+    </form>
+    <br />
+    <a [routerLink]="['/login']"class="text-center">Eu já tenho cadastro</a>
+  </div>
+</div>

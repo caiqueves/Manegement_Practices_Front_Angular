@@ -1,0 +1,9 @@
+<div class="navbar-custom-menu">
+  <ul class="nav navbar-nav">
+    <li class="user user-menu">        
+      <span *ngIf="isLoggedIn()" class="black">
+        Olá, {{user().nome}} | <a (click)="logout()"><i class="icon fa fa-sign-out"></i> Sair</a>
+      </span>      
+    </li>
+  </ul>
+</div>

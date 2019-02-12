@@ -1,0 +1,76 @@
+<div class="register-box">
+  <div class="register-logo">
+    <b>PUSH</b> | NOTIFICATION
+    <p>
+      <img src="../../../../assets/push-notifications.gif" height="200" width="250">
+    </p>
+  </div>
+
+  <div class="register-box-body">
+    <div class="register-box-msg">
+      <p>Por favor, informe os dados para continuar</p>
+    </div>
+
+    <form [formGroup]="novoForm" novalidate>
+      <div class="form-group">
+        <app-input [showTip]="false" > 
+        <input type="text" class="form-control" formControlName="name" placeholder="name">
+        <span class="glyphicon glyphicon-user form-control-feedback"></span>
+        </app-input>
+      </div>
+
+      <div class="form-group">
+          <app-input [showTip]="false" > 
+        <input type="email" class="form-control" formControlName="email" placeholder="Email">
+        <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
+          </app-input>
+      </div>
+
+      <div class="form-group">
+          <app-input [showTip]="false" > 
+        <input type="text" class="form-control" formControlName="cpfOuCnpj" placeholder="cpfOuCnpj">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </app-input>
+      </div>
+
+      <div class="form-group">
+          <app-input [showTip]="false" > 
+        <label>Tipo Função</label>
+        <select class="form-control" formControlName="funcao" (change)="selecionar_servico($event.target.value)">
+          <option value="">---Selecione uma função---</option>
+          <option *ngFor="let TipoFuncao of tipofuncao" value={{TipoFuncao.id}}>
+            {{TipoFuncao.descricao}}
+          </option>
+        </select>
+          </app-input>
+      </div>
+
+      <div class="form-group">
+          <app-input [showTip]="false" > 
+        <input type="password" class="form-control" formControlName="senha" placeholder="Informe a senha">
+        <span class="glyphicon glyphicon-lock form-control-feedback"></span>
+          </app-input>
+      </div>
+
+      <div class="form-group">
+          <app-input [showTip]="false" > 
+        <label>Tipo de Metodologia</label>
+        <select multiple="" class="form-control" formControlName="metodologia" style="width: 100%;" tabindex="-1"
+          aria-hidden="true">
+          <option *ngFor="let tipometodologia of tipometodologia " value={{tipometodologia.id}}>
+            {{tipometodologia.descricao}}
+          </option>
+        </select>
+          </app-input>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-4">
+          <button type="button" (click)="cadastrar()" class="btn btn-primary" [disabled]="novoForm.invalid"> Cadastrar</button>
+        </div>
+      </div>
+      <br />
+      <a [routerLink]="['/login']" class="text-center">Eu já tenho cadastro</a>
+    </form>
+  </div>
+</div>

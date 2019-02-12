@@ -1,0 +1,26 @@
+<div class="wrapper">
+    <app-header></app-header> 
+    <div class="content-wrapper fundo "> 
+        <div class="container fundo">
+                <div class="text-center text-muted aguarde" [@wait-visibility]="waitVisibility">
+                    <span class="fa fa-spinner fa-spin fa-3x"></span>
+                    <br /><br />
+                    <h4>Carregando, favor aguarde...</h4>
+                </div>
+
+            <router-outlet></router-outlet>
+        </div>
+     </div>   
+     <app-snackbar></app-snackbar>
+    <footer class="main-footer">
+        <div class="container">
+            <div class="pull-right hidden-xs">
+                <b>Versão do Sistema</b> 1.0.0
+            </div>
+            <strong>Push Notification</strong> - Caíque Ferreira - <strong>caique.sire@gmail.com</strong>
+        </div>
+    </footer> 
+</div> 
+
+
+
